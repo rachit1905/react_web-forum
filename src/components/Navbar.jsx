@@ -37,10 +37,11 @@ const Navbar = () => {
     document.body.classList.replace(document.body.classList, theme);
 
   useEffect(() => {
-    if (localStorage.getItem("theme") === "light")
-      document.getElementById("theme").src =
-        "https://img.icons8.com/external-bearicons-glyph-bearicons/64/000000/external-moon-halloween-bearicons-glyph-bearicons.png";
-    else document.getElementById("theme").src = "/icons8-sun.svg";
+    if (localStorage.getItem("theme") === "light") {
+      console.log("Night Icon");
+    } else {
+      console.log("light Icon");
+    }
     localStorage.setItem("theme", theme);
   }, [theme]);
 
@@ -48,9 +49,12 @@ const Navbar = () => {
     const body = document.body.classList;
     if (body.contains("light")) {
       body.replace("light", "dark");
+      document.getElementById("theme").src = "/icons8-sun.svg";
       setTheme("dark");
     } else {
       body.replace("dark", "light");
+      document.getElementById("theme").src =
+        "https://img.icons8.com/external-bearicons-glyph-bearicons/64/000000/external-moon-halloween-bearicons-glyph-bearicons.png";
       setTheme("light");
     }
   };
@@ -63,7 +67,8 @@ const Navbar = () => {
           flexDirection: "row",
           alignItems: "flex-end",
           height: "100%",
-        }}>
+        }}
+      >
         <Link to="/">
           <h3>UniForum</h3>
         </Link>
@@ -79,11 +84,19 @@ const Navbar = () => {
           height: "100%",
           display: "flex",
           justifyContent: "flex-end",
-        }}>
-        <img src="" alt="Change Theme" id="theme" onClick={changeTheme} />
+        }}
+      >
+        <img
+          src="/icons8-sun.svg"
+          alt="Change Theme"
+          id="theme"
+          onClick={changeTheme}
+        />
+        {/* <img src="" alt="Change Theme" id="theme" onClick={changeTheme} /> */}
         <div
           style={{ height: "100%", width: "max-content" }}
-          onClick={handleSignOut}>
+          onClick={handleSignOut}
+        >
           {auth.currentUser && (
             <img
               src={avatar}
