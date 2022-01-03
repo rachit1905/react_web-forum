@@ -10,6 +10,7 @@ const InputSection = ({ writeChat }) => {
           placeholder="Post a message"
           id="chatInput"
           autoComplete="off"
+          spellCheck="true"
         />
         <button id="inputButton" onClick={writeChat}>
           <img
