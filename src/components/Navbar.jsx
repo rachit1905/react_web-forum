@@ -87,7 +87,12 @@ const Navbar = () => {
         }}
       >
         <img
-          src="/icons8-sun.svg"
+          // src="/icons8-sun.svg"
+          src={
+            theme === "dark"
+              ? "/icons8-sun.svg"
+              : "https://img.icons8.com/external-bearicons-glyph-bearicons/64/000000/external-moon-halloween-bearicons-glyph-bearicons.png"
+          }
           alt="Change Theme"
           id="theme"
           onClick={changeTheme}
