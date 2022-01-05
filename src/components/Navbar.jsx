@@ -96,11 +96,13 @@ const Navbar = () => {
           alt="Change Theme"
           id="theme"
           onClick={changeTheme}
+          title="Change Theme"
         />
         {/* <img src="" alt="Change Theme" id="theme" onClick={changeTheme} /> */}
         <div
           style={{ height: "100%", width: "max-content" }}
           onClick={handleSignOut}
+          title="Sign Out"
         >
           {auth.currentUser && (
             <img
@@ -110,7 +112,6 @@ const Navbar = () => {
               onClick={handleSignOut}
             />
           )}
-          <title>Sign Out</title>
         </div>
       </div>
     </nav>
