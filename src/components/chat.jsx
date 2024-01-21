@@ -72,9 +72,8 @@ const Chat = () => {
       name: user.displayName,
       // userPhoto: userSnap.userPhoto,
       userPhoto:
-        "https://avatars.dicebear.com/api/jdenticon/" +
-        user.uid.slice(0, 7) +
-        ".svg?mood[]=happy&background=transparent",
+        "https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=" +
+        user.uid.slice(0, 7),
       // auth.currentUser.photoURL,
       // "https://avatars.dicebear.com/api/micah/6vd3.svg?mood[]=happy&background=transparent",
       userEmail: user.email,
